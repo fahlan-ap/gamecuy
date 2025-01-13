@@ -5,13 +5,14 @@ import {
     Route
 } from "react-router-dom";
 import LandingPage from "./pages/landing_page";
+import LoginForm from "./pages/login_page";
 
 function AppRouter() {
     return (
         <Router>
             <Routes>
                 <Route path="/" element={<LandingPage />} />
-
+                <Route path="/login_page" element={<LoginForm />} />
                 {/* gunakan RouterDash untuk semua rute dashboard */}
                 
             </Routes>
