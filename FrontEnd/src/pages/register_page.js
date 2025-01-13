@@ -48,7 +48,11 @@ const RegisterForm = () => {
             <Form className="w-75 text-start">
               <Form.Group controlId="formBasicUsername">
                 <Form.Label>Username</Form.Label>
-                <Form.Control type="text" placeholder="Enter username" />
+                <Form.Control
+                  type="text"
+                  placeholder="Enter username"
+                  className="bg-dark text-white"
+                />
               </Form.Group>
 
               <Form.Group controlId="formBasicEmail" className="mt-3">
