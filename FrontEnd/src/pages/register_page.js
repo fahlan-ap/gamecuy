@@ -36,6 +36,7 @@ const RegisterForm = () => {
             background: "transparent",
             fontSize: "1.5rem",
             cursor: "pointer",
+            color: "white",
           }}
         >
           <FaTimes />
