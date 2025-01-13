@@ -38,7 +38,11 @@ const LoginForm = () => {
             <Form className="w-75">
               <Form.Group controlId="formBasicEmail">
                 <Form.Label className="text-start">Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" className="bg-dark text-white" />
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  className="bg-dark text-white"
+                />
               </Form.Group>
 
               <Form.Group
@@ -84,7 +88,6 @@ const LoginForm = () => {
               </div>
             </Form>
           </div>
-
         </Row>
       </Card>
     </div>

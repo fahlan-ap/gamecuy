@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/landing_page";
 import LoginForm from "./pages/login_page";
+import RegisterForm from "./pages/register_page";
 
 function AppRouter() {
   return (
