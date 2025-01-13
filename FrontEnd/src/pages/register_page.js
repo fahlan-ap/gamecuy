@@ -45,7 +45,7 @@ const RegisterForm = () => {
         <Row>
           <Col className="px-3 py-4 d-flex flex-column align-items-center">
             <h3 className="mb-4 text-center">Register</h3>
-            <Form className="w-75">
+            <Form className="w-75 text-start">
               <Form.Group controlId="formBasicUsername">
                 <Form.Label>Username</Form.Label>
                 <Form.Control type="text" placeholder="Enter username" />
@@ -53,7 +53,11 @@ const RegisterForm = () => {
 
               <Form.Group controlId="formBasicEmail" className="mt-3">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  className="bg-dark text-white"
+                />
               </Form.Group>
 
               <Form.Group
@@ -64,6 +68,7 @@ const RegisterForm = () => {
                 <Form.Control
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
+                  className="bg-dark text-white"
                 />
                 <span
                   onClick={togglePasswordVisibility}
@@ -86,6 +91,7 @@ const RegisterForm = () => {
                 <Form.Control
                   type={showConfirmPassword ? "text" : "password"}
                   placeholder="Confirm Password"
+                  className="bg-dark text-white"
                 />
                 <span
                   onClick={toggleConfirmPasswordVisibility}

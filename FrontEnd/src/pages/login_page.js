@@ -35,7 +35,7 @@ const LoginForm = () => {
             className="px-3 py-4 d-flex flex-column align-items-center"
           >
             <h3 className="mb-4 text-center">Login</h3>
-            <Form className="w-75">
+            <Form className="w-75 text-start">
               <Form.Group controlId="formBasicEmail">
                 <Form.Label className="text-start">Email address</Form.Label>
                 <Form.Control
@@ -72,7 +72,7 @@ const LoginForm = () => {
                 <p>
                   Belum punya akun?{" "}
                   <Link
-                    to="/Register"
+                    to="/register_page"
                     style={{ color: "gray", textDecoration: "none" }}
                   >
                     Klik Disini
