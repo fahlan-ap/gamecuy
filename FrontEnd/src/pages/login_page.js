@@ -81,7 +81,7 @@ const LoginForm = () => {
                 <Button
                   className="button-form"
                   type="submit"
-                  onClick={() => navigate("/Dashboard")}
+                  onClick={() => navigate("/home_page")}
                 >
                   Login
                 </Button>

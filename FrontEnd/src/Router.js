@@ -3,14 +3,33 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/landing_page";
 import LoginForm from "./pages/login_page";
 import RegisterForm from "./pages/register_page";
+import Helmet from "./components/helmet";
 
 function AppRouter() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/login_page" element={<LoginForm />} />
-        <Route path="/register_page" element={<RegisterForm />} />
+        <Route path="/" element={
+          <>
+            <Helmet title="Gamecuy" /> 
+            <LandingPage /> 
+            </> 
+          } 
+        />
+        <Route path="/login_page" element={
+          <>
+            <Helmet title="Gamecuy - Login" /> 
+            <LoginForm /> 
+            </> 
+          } 
+        />
+        <Route path="/register_page" element={
+          <>
+            <Helmet title="Gamecuy - Register" /> 
+            <RegisterForm /> 
+            </> 
+          } 
+        />
         {/* gunakan RouterDash untuk semua rute dashboard */}
       </Routes>
     </Router>
