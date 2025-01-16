@@ -19,6 +19,7 @@ import {
     FaUserCircle,
     FaSearch,
     FaTimes,
+    FaCog,
   } from "react-icons/fa";
 import logo from '../assets/image/GameCuy-logo.png';
 
@@ -27,6 +28,11 @@ function NavBar() {
     const [searchText, setSearchText] = useState("");
     const [showCartModal, setShowCartModal] = useState(false);
     const [showCheckoutModal, setShowCheckoutModal] = useState(false);
+
+    const [showModal, setShowModal] = useState(false);
+
+    const handleOpenModal = () => setShowModal(true);
+    const handleCloseModal = () => setShowModal(false);
 
     const handleSearchChange = (e) => {
         setSearchText(e.target.value);
@@ -104,6 +110,12 @@ function NavBar() {
                         >
                             Wishlist
                         </Nav.Link>
+                        <Nav.Link
+                            onClick={handleOpenModal}
+                            className="text-white me-2"
+                            >
+                            {<span className="ml-4">Redeem</span>}
+                        </Nav.Link>
                     </Nav>
                     <Nav>
                         <Button variant="link" className="text-white">
@@ -121,16 +133,49 @@ function NavBar() {
                             <FaUserCircle size={24} />
                             </Dropdown.Toggle>
                             <Dropdown.Menu style={{ right: 0, left: "auto" }}>
-                            <Dropdown.Item href="#profile">Profile</Dropdown.Item>
-                            <Dropdown.Item href="#settings">Settings</Dropdown.Item>
-                            <Dropdown.Divider />
-                            <Dropdown.Item onClick={() => navigate("/")}>
-                                Logout
-                            </Dropdown.Item>
+                                <Dropdown.Item href="#profile">Profile</Dropdown.Item>
+                                <Dropdown.Item href="#settings">Settings</Dropdown.Item>
+                                <Dropdown.Divider />
+                                <Dropdown.Item onClick={() => navigate("/")}>
+                                    Logout
+                                </Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
                     </Nav>
                 </Container>
+                <Modal show={showModal} onHide={handleCloseModal} centered>
+                    <div className="p-3">
+                    <h4 className="text-center">Redeem Game</h4>
+                    </div>
+
+                    <Modal.Body>
+                    <Form>
+                        <Form.Group>
+                        <Form.Label className="text-black">
+                            Masukkan Kode Redeem:
+                        </Form.Label>
+                        <Form.Control type="text" placeholder="Kode Redeem" />
+                        </Form.Group>
+                    </Form>
+                    </Modal.Body>
+
+                    <div className="p-4 border-0 d-flex justify-content-center gap-4">
+                    <Button
+                        variant="secondary"
+                        style={{ width: "100px" }}
+                        onClick={handleCloseModal}
+                    >
+                        Close
+                    </Button>
+                    <Button
+                        variant="dark"
+                        style={{ width: "100px" }}
+                        onClick={handleCloseModal}
+                    >
+                        Redeem
+                    </Button>
+                    </div>
+                </Modal>
             </Navbar>
         </>
     );
