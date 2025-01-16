@@ -2,8 +2,11 @@ import React from "react";
 
 const HomePage = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
+    <>
+        <div className="d-flex flex-warp bckground-home">
+        </div>
+    </>
   );
 };
+
+export default HomePage;

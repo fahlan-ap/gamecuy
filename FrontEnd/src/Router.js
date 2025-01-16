@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/landing_page";
 import LoginForm from "./pages/login_page";
 import RegisterForm from "./pages/register_page";
+import HomePage from "./pages/home_page";
 import Helmet from "./components/helmet";
 
 function AppRouter() {
@@ -30,7 +31,13 @@ function AppRouter() {
             </> 
           } 
         />
-        {/* gunakan RouterDash untuk semua rute dashboard */}
+        <Route path="/home_page" element={
+          <>
+            <Helmet title="Gamecuy - Home" /> 
+            <HomePage /> 
+            </> 
+          }
+        />
       </Routes>
     </Router>
   );
