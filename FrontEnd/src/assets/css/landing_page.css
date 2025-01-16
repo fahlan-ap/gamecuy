@@ -13,18 +13,6 @@ body {
     src: url("../font/Dacherry.ttf");
 }
 
-.navbar {
-    background: linear-gradient(
-    rgb(255, 255, 255),
-    rgba(255, 255, 255, 0.75),
-    rgba(255, 255, 255, 0)
-    );
-    backdrop-filter: blur(3.3px);
-    -webkit-backdrop-filter: blur(3.3px);
-    font-family: "Poppins", serif;
-    font-weight: 700;
-}
-
 .button-daftar {
     width: 128px;
     height: 35px;

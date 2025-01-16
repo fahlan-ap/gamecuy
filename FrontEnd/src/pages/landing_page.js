@@ -11,7 +11,15 @@ function LandingPage() {
 
     return (
         <>
-            <Navbar expand="lg" fixed="top">
+            <Navbar expand="lg" fixed="top"
+                style={{
+                    background: "linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0))",
+                    boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+                    backdropFilter: "blur(3.3px)",
+                    WebkitBackdropFilter: "blur(3.3px)",
+                    fontFamily: '"Poppins", serif',
+                    fontWeight: 700
+                }}>
                 <Container>
                     <Navbar.Brand>
                         <img src={logo} alt="logo" width="30" height="30" className="d-inline-block align-top" />{" "}

@@ -1,9 +1,11 @@
 import React from "react";
+import NavBar from "../components/navbar";
 
 const HomePage = () => {
   return (
     <>
-        <div className="d-flex flex-warp bckground-home">
+        <div className="bckground-home">
+          <NavBar />
         </div>
     </>
   );
