@@ -1,4 +1,4 @@
-.bckground-home {
+.bckground-library {
   background-image: url("../image/bg-home.jpg");
   background-size: cover;
   background-position: center;
@@ -6,95 +6,16 @@
   width: 100vw;
 }
 
-/* Card Home */
-
-.cardhome {
-  margin: 20px;
-  width: 18rem;
-  height: 360px;
-  background-color: #191c20;
-}
-
-.btn-card1 {
-  font-size: 0.75rem;
-  padding: 5px 28px;
-  display: flex;
-  align-items: center;
-  background-color: #5a5b5c;
-}
-
-.btn-card2 {
-  font-size: 0.75rem;
-  padding: 5px 20px;
-  display: flex;
-  align-items: center;
-  background-color: #5a5b5c;
-}
-
-.dash {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 84vh;
-  text-align: center;
-  background-color: #2d2e30;
-}
-
-.dash h1 {
-  font-family: Dacherry;
-  font-size: 70px;
-  color: #ffffff;
-}
-
-.dash img {
-  width: 300px;
-  height: 300px;
-}
-
-.text-section {
-  max-width: 40%;
-}
-
-.justify-text {
-  text-align: justify;
-}
-
-.button-library {
-  width: 128px;
-  height: 35px;
-  border: none;
-  border-radius: 3px;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.button-library:hover {
-  background-color: #5a5b5c;
-  transition: background-color 0.2s;
-}
-
-.modal-chart {
-  margin-left: 300px;
-  margin-bottom: 150px;
-}
-
-.img-chart {
-  width: 270px;
-  margin-right: 600px;
-}
-
 /* Card Library */
-
 /* Pembungkus card */
 .game-card-wrapper {
-  background-color: #1c1c1c; /* Warna latar belakang */
-  border-radius: 8px; /* Sudut membulat */
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Efek bayangan */
-  max-width: 100%; /* Tetap fleksibel */
-  padding: 20px; /* Padding default */
-  padding-right: 20px; /* Memotong panjang sisi kanan */
-  margin: 0 auto; /* Tetap di tengah */
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 100%;
+  padding: 20px;
+  padding-right: 20px;
+  margin: 0 auto;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -117,23 +38,4 @@
 .text-section p {
   font-size: 1rem;
   color: #d1d1d1;
-}
-
-/* Tombol download */
-.button-library {
-  background-color: #b9b6b2;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-.button-library h6 {
-  color: #141414;
-  font-weight: 700;
-}
-
-.button-library:hover {
-  background-color: #585756;
 }
