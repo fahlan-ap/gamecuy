@@ -11,8 +11,15 @@
 .cardhome {
   margin: 20px;
   width: 18rem;
-  height: 360px;
+  height: 365px;
   background-color: #191c20;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardhome:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-card1 {
@@ -29,57 +36,4 @@
   display: flex;
   align-items: center;
   background-color: #5a5b5c;
-}
-
-.dash {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 84vh;
-  text-align: center;
-  background-color: #2d2e30;
-}
-
-.dash h1 {
-  font-family: Dacherry;
-  font-size: 70px;
-  color: #ffffff;
-}
-
-.dash img {
-  width: 300px;
-  height: 300px;
-}
-
-.text-section {
-  max-width: 40%;
-}
-
-.justify-text {
-  text-align: justify;
-}
-
-.button-library {
-  width: 128px;
-  height: 35px;
-  border: none;
-  border-radius: 3px;
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.button-library:hover {
-  background-color: #5a5b5c;
-  transition: background-color 0.2s;
-}
-
-.modal-chart {
-  margin-left: 300px;
-  margin-bottom: 150px;
-}
-
-.img-chart {
-  width: 270px;
-  margin-right: 600px;
 }
