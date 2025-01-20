@@ -17,32 +17,12 @@ const Cardlibrary = () => {
               <Image src={gameimg} alt="game cover" fluid rounded />
             </Col>
             <Col md={8} className="text-section text-white">
-              <h2>Read Dead Redemption 2</h2>
-              <p className="justify-text">
-                Game AAA dengan anggaran besar dan kualitas grafis yang luar
-                biasa dan mengesankan.
-              </p>
-              <Button variant="" className="button-library" href="#">
-                <h6>Download</h6>
-              </Button>
-            </Col>
-          </Row>
-        </div>
-
-        {/* Card Game 2 */}
-        <div className="game-card-wrapper mb-4 p-3">
-          <Row className="align-items-center">
-            <Col md={4}>
-              <Image src={gameimg} alt="game cover" fluid rounded />
-            </Col>
-            <Col md={8} className="text-section text-white">
               <h2>God Of War Ragnarok</h2>
               <p className="justify-text">
-                Berpetualang bersama bapak botak kratos dan anaknya atreus di
-                mitologi nordik.
+              Petualangan bersama bapak botak dan anaknya
               </p>
-              <Button variant="" className="button-library" href="#">
-                <h6>Download</h6>
+              <Button variant="light" style={{ width: "130px", fontWeight: "bold" }}>
+                Download
               </Button>
             </Col>
           </Row>

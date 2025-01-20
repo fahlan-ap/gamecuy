@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from "react";
 import { FaShoppingCart, FaHeart } from "react-icons/fa";
 import Button from "react-bootstrap/Button";
@@ -101,5 +100,3 @@ function Cardhome() {
 }
 
 export default Cardhome;
-=======
->>>>>>> 15800dfa2874e35533a1e1689791e5367eb093d4

@@ -4,8 +4,8 @@ import LandingPage from "./pages/landing_page";
 import LoginForm from "./pages/login_page";
 import RegisterForm from "./pages/register_page";
 import HomePage from "./pages/home_page";
-import Helmet from "./components/helmet";
 import LibraryPage from "./pages/library_page";
+import Helmet from "./components/helmet";
 
 function AppRouter() {
   return (
