@@ -1,13 +1,13 @@
 import React from "react";
 import NavBar from "../components/navbar";
-import Cardlibrary from "../components/cardlibrary";
+import Cardhome from "../components/cardhome";
 
 const HomePage = () => {
   return (
     <>
       <div className="bckground-home">
         <NavBar />
-        <Cardlibrary />
+        <Cardhome />
       </div>
     </>
   );
