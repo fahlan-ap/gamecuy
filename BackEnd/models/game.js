@@ -9,6 +9,7 @@ const Game = db.define ('games', {
     desc : DataTypes.STRING,
     price : DataTypes.INTEGER,
     genre: DataTypes.STRING,
+    license: DataTypes.STRING,
 },{
     freezeTableName: true,
 });
