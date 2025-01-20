@@ -1,7 +1,85 @@
 .bckground-home {
-    background-image: url("../image/bg-home.jpg");
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    width: 100vw;
+  background-image: url("../image/bg-home.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Card Home */
+
+.cardhome {
+  margin: 20px;
+  width: 18rem;
+  height: 360px;
+  background-color: #191c20;
+}
+
+.btn-card1 {
+  font-size: 0.75rem;
+  padding: 5px 28px;
+  display: flex;
+  align-items: center;
+  background-color: #5a5b5c;
+}
+
+.btn-card2 {
+  font-size: 0.75rem;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  background-color: #5a5b5c;
+}
+
+.dash {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 84vh;
+  text-align: center;
+  background-color: #2d2e30;
+}
+
+.dash h1 {
+  font-family: Dacherry;
+  font-size: 70px;
+  color: #ffffff;
+}
+
+.dash img {
+  width: 300px;
+  height: 300px;
+}
+
+.text-section {
+  max-width: 40%;
+}
+
+.justify-text {
+  text-align: justify;
+}
+
+.button-library {
+  width: 128px;
+  height: 35px;
+  border: none;
+  border-radius: 3px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.button-library:hover {
+  background-color: #5a5b5c;
+  transition: background-color 0.2s;
+}
+
+.modal-chart {
+  margin-left: 300px;
+  margin-bottom: 150px;
+}
+
+.img-chart {
+  width: 270px;
+  margin-right: 600px;
 }
