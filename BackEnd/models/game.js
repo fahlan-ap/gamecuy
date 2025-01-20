@@ -3,11 +3,12 @@ import db from "../config/database.js";
 
 const { DataTypes } = Sequelize;
 
-const Game = db.define ('game_table', {
+const Game = db.define ('games', {
     name : DataTypes.STRING,
     cover : DataTypes.STRING,
     desc : DataTypes.STRING,
     price : DataTypes.INTEGER,
+    genre: DataTypes.STRING,
 },{
     freezeTableName: true,
 });
