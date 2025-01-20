@@ -11,15 +11,8 @@
 .cardhome {
   margin: 20px;
   width: 18rem;
-  height: 365px;
+  height: 360px;
   background-color: #191c20;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cardhome:hover {
-  transform: scale(1.05);
-  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-card1 {
