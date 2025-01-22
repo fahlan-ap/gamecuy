@@ -4,6 +4,7 @@ import LandingPage from "./pages/landing_page";
 import LoginForm from "./pages/login_page";
 import RegisterForm from "./pages/register_page";
 import AdminDash from "./pages/admin_dash";
+import AddGames from "./pages/add_games";
 import HomePage from "./pages/home_page";
 import LibraryPage from "./pages/library_page";
 import Helmet from "./components/helmet";
@@ -44,11 +45,21 @@ function AppRouter() {
         />
 
         <Route
-          path="/admin_home"
+          path="/admin_dash"
           element={
             <>
               <Helmet title="Gamecuy - Admin Dashboard" />
               <AdminDash />
+            </>
+          }
+        />
+
+        <Route
+          path="/add_games"
+          element={
+            <>
+              <Helmet title="Gamecuy - Admin Dashboard" />
+              <AddGames />
             </>
           }
         />

@@ -69,7 +69,7 @@ function AdminNav({ onSearch }) {  // Tambahkan props onSearch
                     </Form>
                 </Nav>
                 <Nav>
-                    <Nav.Link className="text-dark me-2" onClick={() => navigate("/home_page")}>
+                    <Nav.Link className="text-dark me-2" onClick={() => navigate("/add_games")}>
                         <FaPlusCircle size={23} />
                     </Nav.Link>
                 </Nav>
