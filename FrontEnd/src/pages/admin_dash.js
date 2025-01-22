@@ -29,10 +29,36 @@ const AdminDash = () => {
         }
     };
 
+    // Fungsi untuk menghapus game
+    const handleDeleteGame = (id, name) => {
+        const confirmDelete = window.confirm(`Apakah Anda yakin ingin menghapus game "${name}"?`);
+        if (!confirmDelete) return;  // Jika pengguna membatalkan, hentikan proses
+
+        fetch(`http://localhost:3001/api/games/${id}`, {
+            method: "DELETE",
+        })
+            .then(response => {
+                if (response.ok) {
+                    // Hapus game dari state setelah berhasil dihapus dari backend
+                    setGames(prevGames => prevGames.filter(game => game.id !== id));
+                    setSearchResults(prevGames => prevGames.filter(game => game.id !== id));
+
+                    window.alert(`Game "${name}" berhasil dihapus.`);
+                } else {
+                    console.error("Error deleting game");
+                    window.alert("Gagal menghapus game.");
+                }
+            })
+            .catch(error => {
+                console.error("Error deleting game:", error);
+                window.alert("Terjadi kesalahan saat menghapus game.");
+            });
+    };
+
     return (
         <div className="bckground-admin">
             <AdminNav onSearch={handleSearch} /> {/* Kirim fungsi pencarian */}
-            <AdminCard games={searchResults} /> {/* Kirim hasil pencarian */}
+            <AdminCard games={searchResults} onDelete={handleDeleteGame} /> {/* Kirim fungsi delete */}
         </div>
     );
 };

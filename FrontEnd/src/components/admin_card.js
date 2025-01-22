@@ -4,7 +4,7 @@ import { MdDelete } from "react-icons/md";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
-function AdminCard({ games }) {
+function AdminCard({ games, onDelete }) {
 
   return (
     <>
@@ -37,7 +37,11 @@ function AdminCard({ games }) {
                   <Button className="btn-card1" variant="light">
                     <FaEdit className="me-1" style={{ fontSize: "0.8rem" }} /> Edit
                   </Button>
-                  <Button variant="light" className="btn-card2">
+                  <Button 
+                    variant="light" 
+                    className="btn-card2"
+                    onClick={() => onDelete(game.id, game.name)} // Kirim id dan nama game
+                  >
                     <MdDelete className="me-1" style={{ fontSize: "0.8rem" }} /> Delete
                   </Button>
                 </div>
