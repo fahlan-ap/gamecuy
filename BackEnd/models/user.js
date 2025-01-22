@@ -1,5 +1,6 @@
 import { DataTypes } from "sequelize";
 import db from "../config/database.js";
+import Role from "./role.js";  // Import model Role
 
 const User = db.define(
   "User",
@@ -25,6 +26,10 @@ const User = db.define(
     role_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: Role,    // Menunjukkan model Role sebagai referensi
+        key: "id",    // Kolom yang digunakan sebagai referensi pada tabel Role
+      },
     },
   },
   {

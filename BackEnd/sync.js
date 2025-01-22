@@ -1,6 +1,7 @@
 import db from "./config/database.js";
-import User from "./models/user.js";
-import Role from "./models/role.js";
+import "./models/user.js";
+import "./models/role.js";
+import "./models/game.js";
 
 (async () => {
     try {
