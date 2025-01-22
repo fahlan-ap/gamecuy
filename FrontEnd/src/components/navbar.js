@@ -8,31 +8,18 @@ import {
     FormControl,
     Button,
     Dropdown,
-    Modal,
-    Image,
-    Row,
-    Col,
   } from "react-bootstrap";
   import {
-    FaBell,
     FaShoppingCart,
     FaUserCircle,
     FaSearch,
     FaTimes,
-    FaCog,
   } from "react-icons/fa";
 import logo from '../assets/image/GameCuy-logo.png';
 
 function NavBar() {
     const navigate = useNavigate();
     const [searchText, setSearchText] = useState("");
-    const [showCartModal, setShowCartModal] = useState(false);
-    const [showCheckoutModal, setShowCheckoutModal] = useState(false);
-
-    const [showModal, setShowModal] = useState(false);
-
-    const handleOpenModal = () => setShowModal(true);
-    const handleCloseModal = () => setShowModal(false);
 
     const handleSearchChange = (e) => {
         setSearchText(e.target.value);
@@ -40,23 +27,6 @@ function NavBar() {
 
     const clearSearch = () => {
         setSearchText("");
-    };
-
-    const handleOpenCartModal = () => {
-        setShowCartModal(true);
-    };
-
-    const handleCloseCartModal = () => {
-        setShowCartModal(false);
-    };
-
-    const handleCheckout = () => {
-        setShowCartModal(false); // Tutup modal keranjang
-        setShowCheckoutModal(true); // Buka modal checkout
-    };
-
-    const handleCloseCheckoutModal = () => {
-        setShowCheckoutModal(false);
     };
 
     return (
@@ -100,9 +70,9 @@ function NavBar() {
                     <Nav>
                         <Nav.Link
                             className="text-white me-2"
-                            onClick={() => navigate("/library_page")}
+                            onClick={() => navigate("/home_page")}
                         >
-                            Library
+                            Home
                         </Nav.Link>
                         <Nav.Link
                             className="text-white me-2"
@@ -111,26 +81,22 @@ function NavBar() {
                             Wishlist
                         </Nav.Link>
                         <Nav.Link
-                            onClick={handleOpenModal}
                             className="text-white me-2"
+                            onClick={() => navigate("/library_page")}
                             >
-                            {<span className="ml-4">Redeem</span>}
+                            Library
+                        </Nav.Link>
+                        <Nav.Link
+                            className="text-white me-2"
+                            onClick={() => navigate("/cart_page")}
+                            >
+                            <FaShoppingCart size={23} />
                         </Nav.Link>
                     </Nav>
                     <Nav>
-                        <Button variant="link" className="text-white">
-                            <FaBell size={16} />
-                        </Button>
-                        <Button
-                            variant="link"
-                            className="text-white"
-                            onClick={handleOpenCartModal}
-                        >
-                            <FaShoppingCart size={16} />
-                        </Button>
                         <Dropdown align="end">
                             <Dropdown.Toggle variant="link" className="text-white">
-                            <FaUserCircle size={24} />
+                            <FaUserCircle size={23} />
                             </Dropdown.Toggle>
                             <Dropdown.Menu style={{ right: 0, left: "auto" }}>
                                 <Dropdown.Item href="#profile">Profile</Dropdown.Item>
@@ -143,39 +109,6 @@ function NavBar() {
                         </Dropdown>
                     </Nav>
                 </Container>
-                <Modal show={showModal} onHide={handleCloseModal} centered>
-                    <div className="p-3">
-                    <h4 className="text-center">Redeem Game</h4>
-                    </div>
-
-                    <Modal.Body>
-                    <Form>
-                        <Form.Group>
-                        <Form.Label className="text-black">
-                            Masukkan Kode Redeem:
-                        </Form.Label>
-                        <Form.Control type="text" placeholder="Kode Redeem" />
-                        </Form.Group>
-                    </Form>
-                    </Modal.Body>
-
-                    <div className="p-4 border-0 d-flex justify-content-center gap-4">
-                    <Button
-                        variant="secondary"
-                        style={{ width: "100px" }}
-                        onClick={handleCloseModal}
-                    >
-                        Close
-                    </Button>
-                    <Button
-                        variant="dark"
-                        style={{ width: "100px" }}
-                        onClick={handleCloseModal}
-                    >
-                        Redeem
-                    </Button>
-                    </div>
-                </Modal>
             </Navbar>
         </>
     );
