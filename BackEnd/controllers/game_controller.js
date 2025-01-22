@@ -9,15 +9,19 @@ export const getGames = async(req, res) => {
     }
 }
 
-export const getGamesbyId = async(req, res) => {
+export const searchGames = async (req, res) => {
     try {
-        const response = await Game.findOne({
+        const { query } = req.query; // Ambil input pencarian dari query parameter
+        if (!query) return res.json([]); // Jika query kosong, kembalikan array kosong
+
+        const games = await GameTable.findAll({
             where: {
-                id: req.params.id
+                name: { [Op.like]: `%${query}%` } // Mencari game dengan nama yang mengandung teks pencarian
             }
         });
-        res.status(200).json(response);
+
+        res.json(games);
     } catch (error) {
-        console.log(error.message);
+        res.status(500).json({ message: error.message });
     }
-}
+};
