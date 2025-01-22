@@ -40,7 +40,7 @@ const LoginForm = () => {
 
         // Redirect berdasarkan role
         if (data.user.role_id === 1) {  // Jika role_id adalah 1 untuk admin
-          navigate("/admin_home");
+          navigate("/admin_dash");
         } else if (data.user.role_id === 2) {  // Jika role_id adalah 2 untuk client
           navigate("/home_page");
         } else {

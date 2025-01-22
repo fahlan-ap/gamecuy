@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import AdminNav from "../components/admin_nav";
 import AdminCard from "../components/admin_card";
 
-const AdminHome = () => {
+const AdminDash = () => {
     const [games, setGames] = useState([]);  // Semua game
     const [searchResults, setSearchResults] = useState([]);  // Hasil pencarian
 
@@ -37,4 +37,4 @@ const AdminHome = () => {
     );
 };
 
-export default AdminHome;
+export default AdminDash;

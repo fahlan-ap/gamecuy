@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/landing_page";
 import LoginForm from "./pages/login_page";
 import RegisterForm from "./pages/register_page";
-import AdminHome from "./pages/admin_home";
+import AdminDash from "./pages/admin_dash";
 import HomePage from "./pages/home_page";
 import LibraryPage from "./pages/library_page";
 import Helmet from "./components/helmet";
@@ -48,7 +48,7 @@ function AppRouter() {
           element={
             <>
               <Helmet title="Gamecuy - Admin Dashboard" />
-              <AdminHome />
+              <AdminDash />
             </>
           }
         />

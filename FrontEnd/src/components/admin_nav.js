@@ -9,7 +9,7 @@ import {
     Button,
     Dropdown,
 } from "react-bootstrap";
-import { FaUserCircle, FaSearch, FaTimes } from "react-icons/fa";
+import { FaPlusCircle, FaUserCircle, FaSearch, FaTimes } from "react-icons/fa";
 import logo from '../assets/image/GameCuy-logo.png';
 
 function AdminNav({ onSearch }) {  // Tambahkan props onSearch
@@ -28,7 +28,7 @@ function AdminNav({ onSearch }) {  // Tambahkan props onSearch
     };
 
     return (
-        <Navbar expand="lg" fixed="top"
+        <Navbar expand="lg" sticky="top"
         style={{
             background: "rgb(222, 223, 230)",
             fontFamily: '"Poppins", serif',
@@ -38,7 +38,7 @@ function AdminNav({ onSearch }) {  // Tambahkan props onSearch
             <Container>
                 <Navbar.Brand>
                     <img src={logo} alt="logo" width="30" height="30" className="d-inline-block align-top" />{" "}
-                    <span className="text-black">GameCuy</span>
+                    <span className="text-dark">GameCuy</span>
                 </Navbar.Brand>
                 <Nav className="me-auto">
                     <Form className="d-flex align-items-left position-relative ms-3" style={{ width: "100%" }}>
@@ -69,11 +69,13 @@ function AdminNav({ onSearch }) {  // Tambahkan props onSearch
                     </Form>
                 </Nav>
                 <Nav>
-                    <Nav.Link className="text-black me-2" onClick={() => navigate("/admin_home")}>Games</Nav.Link>
+                    <Nav.Link className="text-dark me-2" onClick={() => navigate("/home_page")}>
+                        <FaPlusCircle size={23} />
+                    </Nav.Link>
                 </Nav>
                 <Nav>
                     <Dropdown align="end">
-                        <Dropdown.Toggle variant="link" className="text-black">
+                        <Dropdown.Toggle variant="link" className="text-dark">
                             <FaUserCircle size={23} />
                         </Dropdown.Toggle>
                         <Dropdown.Menu style={{ right: 0, left: "auto" }}>

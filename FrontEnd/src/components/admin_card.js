@@ -8,7 +8,7 @@ function AdminCard({ games }) {
 
   return (
     <>
-      <div className="text-white mt-4">
+      <div className="text-dark mt-4">
         <h2>Game List</h2>
       </div>
 
