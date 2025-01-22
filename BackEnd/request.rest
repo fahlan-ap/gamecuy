@@ -1,4 +1,4 @@
 GET http://localhost:3001/games
 
 ###
-GET http://localhost:3001/games/1
+GET http://localhost:3001/api/games
