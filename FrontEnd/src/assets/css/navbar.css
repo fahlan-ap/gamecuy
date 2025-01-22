@@ -1,8 +1,6 @@
 .navbar {
-    background: rgba(33, 5, 125, 0.35);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6.3px);
-    -webkit-backdrop-filter: blur(6.3px);
+    background: #191c20;
     font-family: "Poppins", serif;
     font-weight: 700;
+    border-bottom: 1px solid white;
 }
