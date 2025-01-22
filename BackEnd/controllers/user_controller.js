@@ -6,20 +6,20 @@ export const loginUser = async (req, res) => {
 
   // Validasi input
   if (!email || !password) {
-    return res.status(400).json({ message: "Email and password are required" });
+    return res.status(400).json({ message: "Email dan Password dibutuhkan" });
   }
 
   try {
     // Cari user berdasarkan email
     const user = await User.findOne({ where: { email } });
     if (!user) {
-      return res.status(404).json({ message: "User not found" });
+      return res.status(404).json({ message: "User Hilang!" });
     }
 
     // Bandingkan password dengan hash di database
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-      return res.status(401).json({ message: "Invalid email or password" });
+      return res.status(401).json({ message: "Email atau Passwordnya GA BENER TOLOL" });
     }
 
     // Login berhasil

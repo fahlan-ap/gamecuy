@@ -28,11 +28,17 @@ function AdminNav({ onSearch }) {  // Tambahkan props onSearch
     };
 
     return (
-        <Navbar expand="lg" sticky="top">
+        <Navbar expand="lg" fixed="top"
+        style={{
+            background: "rgb(222, 223, 230)",
+            fontFamily: '"Poppins", serif',
+            fontWeight: 700,
+            borderBottom: "1px solid black",
+        }}>
             <Container>
                 <Navbar.Brand>
                     <img src={logo} alt="logo" width="30" height="30" className="d-inline-block align-top" />{" "}
-                    <span className="text-white">GameCuy</span>
+                    <span className="text-black">GameCuy</span>
                 </Navbar.Brand>
                 <Nav className="me-auto">
                     <Form className="d-flex align-items-left position-relative ms-3" style={{ width: "100%" }}>
@@ -63,11 +69,11 @@ function AdminNav({ onSearch }) {  // Tambahkan props onSearch
                     </Form>
                 </Nav>
                 <Nav>
-                    <Nav.Link className="text-white me-2" onClick={() => navigate("/admin_home")}>Games</Nav.Link>
+                    <Nav.Link className="text-black me-2" onClick={() => navigate("/admin_home")}>Games</Nav.Link>
                 </Nav>
                 <Nav>
                     <Dropdown align="end">
-                        <Dropdown.Toggle variant="link" className="text-white">
+                        <Dropdown.Toggle variant="link" className="text-black">
                             <FaUserCircle size={23} />
                         </Dropdown.Toggle>
                         <Dropdown.Menu style={{ right: 0, left: "auto" }}>

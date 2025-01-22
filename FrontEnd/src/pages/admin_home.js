@@ -30,7 +30,7 @@ const AdminHome = () => {
     };
 
     return (
-        <div className="bckground-home">
+        <div className="bckground-admin">
             <AdminNav onSearch={handleSearch} /> {/* Kirim fungsi pencarian */}
             <AdminCard games={searchResults} /> {/* Kirim hasil pencarian */}
         </div>
