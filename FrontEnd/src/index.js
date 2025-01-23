@@ -5,6 +5,8 @@ import App from "./App";
 import "../src/assets/css/landing_page.css";
 import "../src/assets/css/login_page.css";
 import "../src/assets/css/register_page.css";
+import "../src/assets/css/admin_dash.css";
+import "../src/assets/css/admin_form.css";
 import "../src/assets/css/home_page.css";
 import "../src/assets/css/navbar.css";
 import "../src/assets/css/library_page.css";
