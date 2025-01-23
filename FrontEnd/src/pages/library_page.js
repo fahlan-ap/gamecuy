@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "../components/navbar";
 import Cardlibrary from "../components/cardlibrary";
 
-const HomePage = () => {
+const LibraryPage = () => {
   return (
     <>
       <div className="bckground-library">
@@ -13,4 +13,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default LibraryPage;
