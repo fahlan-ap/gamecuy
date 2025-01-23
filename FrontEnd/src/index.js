@@ -10,6 +10,7 @@ import "../src/assets/css/admin_form.css";
 import "../src/assets/css/home_page.css";
 import "../src/assets/css/navbar.css";
 import "../src/assets/css/library_page.css";
+import "../src/assets/css/cart_page.css";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
