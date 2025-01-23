@@ -6,10 +6,9 @@ import {
   Nav,
   Form,
   FormControl,
-  Button,
   Dropdown,
 } from "react-bootstrap";
-import { FaPlusCircle, FaUserCircle, FaSearch, FaTimes } from "react-icons/fa";
+import { FaPlusCircle, FaUserCircle, FaTimes } from "react-icons/fa";
 import logo from "../assets/image/GameCuy-logo.png";
 
 function AdminNav({ onSearch }) {

@@ -6,13 +6,11 @@ import {
   Nav,
   Form,
   FormControl,
-  Button,
   Dropdown,
 } from "react-bootstrap";
 import {
   FaShoppingCart,
   FaUserCircle,
-  FaSearch,
   FaTimes,
 } from "react-icons/fa";
 import logo from "../assets/image/GameCuy-logo.png";
