@@ -7,6 +7,7 @@ import AdminDash from "./pages/admin_dash";
 import AddGames from "./pages/add_games";
 import HomePage from "./pages/home_page";
 import LibraryPage from "./pages/library_page";
+import WishlistPage from "./pages/wishlist_page";
 import Helmet from "./components/helmet";
 import CartPage from "./pages/cart_page";
 
@@ -90,6 +91,16 @@ function AppRouter() {
             <>
               <Helmet title="Gamecuy - Cart" />
               <CartPage />
+            </>
+          }
+        />
+
+        <Route
+          path="/wishlist_page"
+          element={
+            <>
+              <Helmet title="Gamecuy - Wishlist" />
+              <WishlistPage />
             </>
           }
         />
