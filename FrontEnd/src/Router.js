@@ -8,12 +8,12 @@ import AddGames from "./pages/add_games";
 import HomePage from "./pages/home_page";
 import LibraryPage from "./pages/library_page";
 import Helmet from "./components/helmet";
+import CartPage from "./pages/cart_page";
 
 function AppRouter() {
   return (
     <Router>
       <Routes>
-
         <Route
           path="/"
           element={
@@ -84,6 +84,15 @@ function AppRouter() {
           }
         />
 
+        <Route
+          path="/cart_page"
+          element={
+            <>
+              <Helmet title="Gamecuy - Cart" />
+              <CartPage />
+            </>
+          }
+        />
       </Routes>
     </Router>
   );
