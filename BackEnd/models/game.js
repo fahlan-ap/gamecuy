@@ -15,7 +15,3 @@ const Game = db.define ('games', {
 });
 
 export default Game;
-
-(async() => {
-    await Game.sync();
-})();

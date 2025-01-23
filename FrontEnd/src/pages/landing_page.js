@@ -13,27 +13,28 @@ function LandingPage() {
         <>
             <Navbar expand="lg" fixed="top"
                 style={{
-                    background: "linear-gradient(rgb(255, 255, 255), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0))",
+                    background: "black",
                     boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
                     backdropFilter: "blur(3.3px)",
                     WebkitBackdropFilter: "blur(3.3px)",
                     fontFamily: '"Poppins", serif',
-                    fontWeight: 700
+                    fontWeight: 700,
+                    borderBottom: "1px solid white",
                 }}>
                 <Container>
                     <Navbar.Brand>
                         <img src={logo} alt="logo" width="30" height="30" className="d-inline-block align-top" />{" "}
-                        <span className="text-black">GameCuy</span>
+                        <span className="text-white">GameCuy</span>
                     </Navbar.Brand>
                     <Nav className="ms-auto">
                         <Nav.Link
-                            className="text-black me-2"
+                            className="text-white me-2"
                             onClick={() => navigate("/login_page")}
                         >
                             Login
                         </Nav.Link>
                         <Button
-                            className="button-daftar ms-3 bg-black text-white"
+                            className="button-daftar ms-3 bg-white text-black"
                             onClick={() => navigate("/register_page")}
                         >
                             Register

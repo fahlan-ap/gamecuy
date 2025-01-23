@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/landing_page";
 import LoginForm from "./pages/login_page";
 import RegisterForm from "./pages/register_page";
+import AdminDash from "./pages/admin_dash";
+import AddGames from "./pages/add_games";
 import HomePage from "./pages/home_page";
 import LibraryPage from "./pages/library_page";
 import Helmet from "./components/helmet";
@@ -11,6 +13,7 @@ function AppRouter() {
   return (
     <Router>
       <Routes>
+
         <Route
           path="/"
           element={
@@ -20,6 +23,7 @@ function AppRouter() {
             </>
           }
         />
+
         <Route
           path="/login_page"
           element={
@@ -29,6 +33,7 @@ function AppRouter() {
             </>
           }
         />
+
         <Route
           path="/register_page"
           element={
@@ -38,6 +43,27 @@ function AppRouter() {
             </>
           }
         />
+
+        <Route
+          path="/admin_dash"
+          element={
+            <>
+              <Helmet title="Gamecuy - Admin Dashboard" />
+              <AdminDash />
+            </>
+          }
+        />
+
+        <Route
+          path="/add_games"
+          element={
+            <>
+              <Helmet title="Gamecuy - Admin Dashboard" />
+              <AddGames />
+            </>
+          }
+        />
+
         <Route
           path="/home_page"
           element={
@@ -47,6 +73,7 @@ function AppRouter() {
             </>
           }
         />
+
         <Route
           path="/library_page"
           element={
@@ -56,6 +83,7 @@ function AppRouter() {
             </>
           }
         />
+
       </Routes>
     </Router>
   );
