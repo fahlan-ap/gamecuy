@@ -11,8 +11,8 @@ import User from "./models/user.js";
     ]);
 
     // Hash password untuk admin dan client
-    const adminPassword = await bcrypt.hash("admin", 10);
-    const clientPassword = await bcrypt.hash("client", 10);
+    const adminPassword = await bcrypt.hash("6570852", 10);
+    const clientPassword = await bcrypt.hash("1100303", 10);
 
     // Menambahkan user 'admin'
     await User.findOrCreate({
@@ -20,7 +20,7 @@ import User from "./models/user.js";
       defaults: {
         username: "admin",
         password: adminPassword,
-        role_id: adminRole[0].id, // Menggunakan id dari adminRole
+        role_id: adminRole[0].id,
       },
     });
 
@@ -30,7 +30,7 @@ import User from "./models/user.js";
       defaults: {
         username: "client",
         password: clientPassword,
-        role_id: clientRole[0].id, // Menggunakan id dari clientRole
+        role_id: clientRole[0].id,
       },
     });
 
