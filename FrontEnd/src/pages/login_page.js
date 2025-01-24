@@ -34,14 +34,15 @@ const LoginForm = () => {
       const data = await response.json();
 
       if (response.ok) {
-        // Simpan data user dan role di localStorage
-        localStorage.setItem("user", JSON.stringify(data.user));
+        // Simpan userId, role, dan data user ke localStorage
+        localStorage.setItem("userId", data.user.id);
         localStorage.setItem("role", data.user.role);
+        localStorage.setItem("user", JSON.stringify(data.user));
 
         // Redirect berdasarkan role
-        if (data.user.role_id === 1) {  // Jika role_id adalah 1 untuk admin
+        if (data.user.role_id === 1) {  
           navigate("/admin_dash");
-        } else if (data.user.role_id === 2) {  // Jika role_id adalah 2 untuk client
+        } else if (data.user.role_id === 2) {  
           navigate("/home_page");
         } else {
           setErrorMessage("Role tidak dikenali.");
@@ -69,15 +70,12 @@ const LoginForm = () => {
           <FaTimes size={20} />
         </div>
         <Row className="gap">
-          <div
-            md={7}
-            className="px-3 py-4 d-flex flex-column align-items-center"
-          >
+          <div md={7} className="px-3 py-4 d-flex flex-column align-items-center">
             <h3 className="mb-4 text-center">Login</h3>
             {errorMessage && <Alert variant="danger">{errorMessage}</Alert>}
             <Form className="w-75 text-start" onSubmit={handleLogin}>
               <Form.Group controlId="formBasicEmail">
-                <Form.Label className="text-start">Email address</Form.Label>
+                <Form.Label>Email address</Form.Label>
                 <Form.Control
                   type="email"
                   placeholder="Enter email"
@@ -87,10 +85,7 @@ const LoginForm = () => {
                 />
               </Form.Group>
 
-              <Form.Group
-                controlId="formBasicPassword"
-                className="mt-3 position-relative"
-              >
+              <Form.Group controlId="formBasicPassword" className="mt-3 position-relative">
                 <Form.Label>Password</Form.Label>
                 <Form.Control
                   type={showPassword ? "text" : "password"}
@@ -115,10 +110,7 @@ const LoginForm = () => {
               <div className="text-center mt-2 mb-2">
                 <p>
                   Belum punya akun?{" "}
-                  <Link
-                    to="/register_page"
-                    style={{ color: "gray", textDecoration: "none" }}
-                  >
+                  <Link to="/register_page" style={{ color: "gray", textDecoration: "none" }}>
                     Klik Disini
                   </Link>
                 </p>

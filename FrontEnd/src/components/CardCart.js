@@ -21,7 +21,7 @@ const Cardcart = () => {
             </Col>
             <Col md={8} className="text-section text-white">
               <h2>God Of War Ragnarok</h2>
-              <p style={{ fontSize: "0.85rem" }}> Price: 450$ </p>
+              <p style={{ fontSize: "0.85rem" }}> Price: 825000 </p>
               <p>Petualangan bersama bapak botak dan anaknya</p>
               <p> Genre: action, adventure </p>
               <Button

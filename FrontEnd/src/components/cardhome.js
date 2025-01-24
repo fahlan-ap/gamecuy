@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Modal from "react-bootstrap/Modal";
 
-function Cardhome({ games }) {  // Gunakan games sebagai props
+function Cardhome({ games }) {
   const [showModal, setShowModal] = useState(false);
   const [selectedGame, setSelectedGame] = useState(null);
 
@@ -12,6 +12,39 @@ function Cardhome({ games }) {  // Gunakan games sebagai props
   const handleShow = (game) => {
     setSelectedGame(game);
     setShowModal(true);
+  };
+
+  // Fungsi untuk menambahkan game ke wishlist
+  const addToWishlist = async (gameId) => {
+    // Ambil userId dari localStorage
+    const userId = localStorage.getItem("userId");
+
+    if (!userId) {
+      alert("Silakan login terlebih dahulu!");
+      return;
+    }
+
+    try {
+      console.log("Mengirim request ke server...");
+
+      const response = await fetch("http://localhost:3001/wishlist", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userId, gameId }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || "Gagal menambahkan ke wishlist");
+      }
+
+      alert(data.message); // Tampilkan pesan sukses
+    } catch (error) {
+      alert("Error: " + error.message);
+    }
   };
 
   return (
@@ -51,7 +84,7 @@ function Cardhome({ games }) {  // Gunakan games sebagai props
                   <Button className="btn-card1" variant="dark">
                     <FaShoppingCart className="me-1" style={{ fontSize: "0.8rem" }} /> Cart
                   </Button>
-                  <Button variant="dark" className="btn-card2">
+                  <Button variant="dark" className="btn-card2" onClick={() => addToWishlist(game.id)}>
                     <FaHeart className="me-1" style={{ fontSize: "0.8rem" }} /> Wishlist
                   </Button>
                 </div>
@@ -84,7 +117,7 @@ function Cardhome({ games }) {  // Gunakan games sebagai props
           <Button variant="light" style={{ width: "130px" }}>
             <FaShoppingCart className="me-1" /> Cart
           </Button>
-          <Button variant="light" style={{ width: "130px" }}>
+          <Button variant="light" style={{ width: "130px" }} onClick={() => addToWishlist(selectedGame.id)}>
             <FaHeart className="me-1" /> Wishlist
           </Button>
         </Modal.Footer>

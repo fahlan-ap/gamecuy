@@ -1,28 +1,34 @@
-const db = require("../db"); // Import koneksi database
+import { DataTypes } from "sequelize";
+import db from "../config/database.js";
+import Game from "./game.js";  // Import Game model
+import User from "./user.js";  // Import User model
 
-const Wishlist = {
-  // Fungsi untuk mendapatkan semua wishlist berdasarkan user_id
-  getByUserId: (user_id, callback) => {
-    const query = `
-      SELECT w.id, g.name, g.price, g.genre, g.cover 
-      FROM wishlist w
-      JOIN games g ON w.game_id = g.id
-      WHERE w.user_id = ?
-    `;
-    db.query(query, [user_id], callback);
+const Wishlist = db.define("wishlist", {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
   },
-
-  // Fungsi untuk menambahkan game ke wishlist
-  add: (user_id, game_id, callback) => {
-    const query = "INSERT INTO wishlist (user_id, game_id, created_at) VALUES (?, ?, NOW())";
-    db.query(query, [user_id, game_id], callback);
+  userId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: User,
+      key: "id",
+    },
   },
-
-  // Fungsi untuk menghapus game dari wishlist
-  remove: (id, callback) => {
-    const query = "DELETE FROM wishlist WHERE id = ?";
-    db.query(query, [id], callback);
+  gameId: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    references: {
+      model: Game,
+      key: "id",
+    },
   },
-};
+}, { timestamps: false });
 
-module.exports = Wishlist;
+// Definisikan relasi setelah model didefinisikan
+Game.hasMany(Wishlist, { foreignKey: "gameId" });
+Wishlist.belongsTo(Game, { foreignKey: "gameId" });
+
+export default Wishlist;
