@@ -1,10 +1,12 @@
 import React from "react";
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 function AdminCard({ games, onDelete }) {
+  const navigate = useNavigate(); // Hook untuk navigasi
 
   return (
     <>
@@ -30,17 +32,22 @@ function AdminCard({ games, onDelete }) {
                 <Card.Text style={{ color: "black", fontSize: "0.95rem" }}>
                   {game.desc}{" "}
                 </Card.Text>
-                <Card.Text style={{ color: "black", fontSize: "0.85rem", marginTop:"-10px" }}>
+                <Card.Text style={{ color: "black", fontSize: "0.85rem", marginTop: "-10px" }}>
                   Genre: {game.genre}
                 </Card.Text>
                 <div className="d-flex justify-content-center gap-2">
-                  <Button className="btn-card1" variant="light">
+                  {/* Tombol Edit yang mengarahkan ke halaman edit game */}
+                  <Button
+                    className="btn-card1"
+                    variant="light"
+                    onClick={() => navigate(`/edit_game/${game.id}`)}
+                  >
                     <FaEdit className="me-1" style={{ fontSize: "0.8rem" }} /> Edit
                   </Button>
                   <Button 
                     variant="light" 
                     className="btn-card2"
-                    onClick={() => onDelete(game.id, game.name)} // Kirim id dan nama game
+                    onClick={() => onDelete(game.id, game.name)}
                   >
                     <MdDelete className="me-1" style={{ fontSize: "0.8rem" }} /> Delete
                   </Button>

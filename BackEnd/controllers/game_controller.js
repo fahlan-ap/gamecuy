@@ -60,6 +60,43 @@ export const addGame = async (req, res) => {
     }
 };
 
+// fungsi edit game
+export const updateGame = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { name, desc, price, genre, license } = req.body;
+
+        const game = await Game.findByPk(id);
+        if (!game) {
+            return res.status(404).json({ message: "Game tidak ditemukan" });
+        }
+
+        let coverPath = game.cover;
+
+        if (req.file) {
+            const oldCoverPath = path.join("uploads", path.basename(game.cover));
+            if (fs.existsSync(oldCoverPath)) {
+                fs.unlinkSync(oldCoverPath);
+            }
+            coverPath = `../uploads/${req.file.originalname}`;
+        }
+
+        await game.update({
+            name,
+            desc,
+            price,
+            genre,
+            license,
+            cover: coverPath
+        });
+
+        res.status(200).json({ message: "Game berhasil diperbarui", data: game });
+    } catch (error) {
+        console.error("Error updating game:", error);
+        res.status(500).json({ message: "Terjadi kesalahan saat mengupdate game" });
+    }
+};
+
 // fungsi hapus game
 export const deleteGame = async (req, res) => {
     try {
