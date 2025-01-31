@@ -60,7 +60,7 @@ function AdminNav({ onSearch }) {
               className="mr-2"
               style={{ flex: 1, paddingRight: "30px" }}
               value={searchText}
-              onChange={handleSearchChange} // Tangani perubahan input
+              onChange={handleSearchChange}
             />
             {searchText && (
               <FaTimes
@@ -80,17 +80,17 @@ function AdminNav({ onSearch }) {
         <Nav>
           <Nav.Link
             className="text-dark me-2"
-            onClick={() => navigate("/add_games")}
+            onClick={() => navigate("/admin_dash")}
           >
-            <FaPlusCircle size={23} />
+            Dashboard
           </Nav.Link>
         </Nav>
         <Nav>
           <Nav.Link
             className="text-dark me-2"
-            onClick={() => navigate("/admin_dash")}
+            onClick={() => navigate("/add_games")}
           >
-            Dashboard
+            <FaPlusCircle size={23} />
           </Nav.Link>
         </Nav>
         <Nav>
