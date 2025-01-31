@@ -6,6 +6,7 @@ import RegisterForm from "./pages/register_page";
 import AdminDash from "./pages/admin_dash";
 import AddGames from "./pages/add_games";
 import EditGame from "./pages/edit_game";
+import SalesReport from "./pages/sales_report";
 import HomePage from "./pages/home_page";
 import LibraryPage from "./pages/library_page";
 import WishlistPage from "./pages/wishlist_page";
@@ -52,6 +53,16 @@ function AppRouter() {
             <>
               <Helmet title="Gamecuy - Admin Dashboard" />
               <AdminDash />
+            </>
+          }
+        />
+
+        <Route
+          path="/sales_report"
+          element={
+            <>
+              <Helmet title="Gamecuy - Sales Report" />
+              <SalesReport />
             </>
           }
         />

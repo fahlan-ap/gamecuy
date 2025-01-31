@@ -86,6 +86,22 @@ function AdminNav({ onSearch }) {
           </Nav.Link>
         </Nav>
         <Nav>
+          <Nav.Link
+            className="text-dark me-2"
+            onClick={() => navigate("/admin_dash")}
+          >
+            Dashboard
+          </Nav.Link>
+        </Nav>
+        <Nav>
+          <Nav.Link
+            className="text-dark me-2"
+            onClick={() => navigate("/sales_report")}
+          >
+            Report
+          </Nav.Link>
+        </Nav>
+        <Nav>
           <Dropdown align="end">
             <Dropdown.Toggle variant="link" className="text-dark">
               <FaUserCircle size={23} />
